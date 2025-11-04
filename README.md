@@ -67,23 +67,6 @@ dla bezpieczeństwa warto jeszcze po tym wpisać pip install fastmcp
   jupyter notebook eda/EDA_cocktails.ipynb
   ```
   
-## Uruchomienie MCP servera
-Plik serwera: `mcp_servers/csv_server.py`.  
-Upewnij się, że `data/cocktails.csv` istnieje.
-
-Tutaj aby w ten sposób odpalić musimy być w repozytorium
-```bash
-python mcp_servers/csv_server.py
-```
-
-Jeżeli chcemy odpalić bez wejścia do repozytorium
-
-```bash
-python  "pełna ścieżka do pliku"
-```
-
-Serwer działa przez **stdio** – nie otwiera portu HTTP
-
 ## Integracja z Claude Desktop (MCP)
 1. Otwórz **Claude Desktop → Settings → Developer → Edit Config**.  
 2. W pliku `claude_desktop_config.json` (Windows) dodaj/zmień:
@@ -100,9 +83,9 @@ Serwer działa przez **stdio** – nie otwiera portu HTTP
 	"inputs": []
 }
 ```
-UWAGA! Podczas kopiowania ścieżek pamiętaj o dodaniu dodatkowych \, tak jak w przykładzie poniżej
+UWAGA! Podczas kopiowania ścieżek pamiętaj o dodaniu dodatkowych \\, tak jak w przykładzie poniżej
 
-C:\\Users\\czarodziej123\\Desktop\\KNSolvro-ZadanieR\\.venv\\Scripts\\python.exe
+C:\\\Users\\\czarodziej123\\\Desktop\\\KNSolvro-ZadanieR\\\.venv\\\Scripts\\\python.exe
 
 3. **Zapisz** plik i **zrestartuj** Claude Desktop.
 
