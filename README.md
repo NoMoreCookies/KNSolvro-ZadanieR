@@ -50,8 +50,8 @@ Zbudować proste, lokalne urządzenie **RAG**, które:
 
 ## Instalacja (przez git bash)
 ```bash
-git clone <URL_DO_TEO_REPO>
-cd <NAZWA_REPO>
+git clone https://github.com/NoMoreCookies/KNSolvro-ZadanieR.git
+cd KNSolvro-ZadanieR
 python -m venv .venv
 source .venv/Scripts/activate
 pip install -r requirements.txt
@@ -100,6 +100,9 @@ Serwer działa przez **stdio** – nie otwiera portu HTTP
 	"inputs": []
 }
 ```
+UWAGA! Podczas kopiowania ścieżek pamiętaj o dodaniu dodatkowych \, tak jak w przykładzie poniżej
+
+C:\\Users\\czarodziej123\\Desktop\\KNSolvro-ZadanieR\\.venv\\Scripts\\python.exe
 
 3. **Zapisz** plik i **zrestartuj** Claude Desktop.
 
