@@ -100,7 +100,7 @@ Serwer działa przez **stdio** – nie otwiera portu HTTP
 	"mcpServers": {
 		"csv-mcp": {
 			"type": "stdio",
-			"command": "python",
+			"command": "pełna ścieżka do python.exe w utworzonym venv",
 			"args": ["pełna ścieżka do pliku z serwerem"]
 		}
 	},
@@ -110,7 +110,7 @@ Serwer działa przez **stdio** – nie otwiera portu HTTP
 
 3. **Zapisz** plik i **zrestartuj** Claude Desktop.
 
-4. W nowym czacie powinny pojawić się narzędzia MCP z serwera `csv-mcp`. Pamiętaj,że aby to działało server musi być odpalony,np z poziomu konsoli.
+4. W nowym czacie powinny pojawić się narzędzia MCP z serwera `csv-mcp`.
 
 ## Jak używać (przykłady)
 Wpisuj w czacie z Claude (on wywoła narzędzia MCP):
