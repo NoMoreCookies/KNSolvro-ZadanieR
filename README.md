@@ -52,7 +52,7 @@ Zbudować proste, lokalne urządzenie **RAG**, które:
 ```bash
 git clone https://github.com/NoMoreCookies/KNSolvro-ZadanieR.git
 cd KNSolvro-ZadanieR
-python -m venv .venv
+python 3.12 -m venv .venv
 source .venv/Scripts/activate
 pip install -r requirements.txt
 
