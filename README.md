@@ -58,7 +58,22 @@ python -m venv .venv
 
 pip install -r requirements.txt
 ```
+tutaj dodam, że czasami na windowsie jest problem z odpaleniem venv, jeżeli owy wystąpi spróbuj zastosować komendę
 
+```bash
+Set-ExecutionPolicy Unrestricted -Scope Process
+```
+
+Dla danej sesji terminala pozwala ona na odpalenie venv
+
+## EDA – eksploracja danych
+- Notatnik: `eda/EDA_cocktails.ipynb`.  
+- Zawiera: opis kolumn, proste wykresy.  
+- Uruchom:
+  ```bash
+  jupyter notebook eda/EDA_cocktails.ipynb
+  ```
+  
 ## Uruchomienie MCP servera
 Plik serwera: `mcp_servers/csv_server.py`.  
 Upewnij się, że `data/cocktails.csv` istnieje.
@@ -110,13 +125,7 @@ Wpisuj w czacie z Claude (on wywoła narzędzia MCP):
   > *“`filter_drinks_by_ingredient(\"tequila\")` i podaj pasujące drinki.”*
 
 
-## EDA – eksploracja danych
-- Notatnik: `eda/EDA_cocktails.ipynb`.  
-- Zawiera: opis kolumn, proste wykresy.  
-- Uruchom:
-  ```bash
-  jupyter notebook eda/EDA_cocktails.ipynb
-  ```
+
 
 ## Rozwiązywanie problemów
 - **Claude nie widzi serwera** – sprawdź, czy w configu jest klucz `mcpServers`, a `command` wskazuje na Twoje `.venv/.../python(.exe)`.  
