@@ -11,7 +11,6 @@
 - [Uruchomienie MCP servera](#uruchomienie-mcp-servera)
 - [Integracja z Claude Desktop (MCP)](#integracja-z-claude-desktop-mcp)
 - [Jak używać (przykłady)](#jak-używać-przykłady)
-- [Jak to działa (RAG)](#jak-to-działa-rag)
 - [EDA – eksploracja danych](#eda--eksploracja-danych)
 - [Rozwiązywanie problemów](#rozwiązywanie-problemów)
 
@@ -22,7 +21,7 @@
 Zbudować proste, lokalne urządzenie **RAG**, które:
 1) eksploruje zestaw **cocktails**,  
 2) wystawia narzędzia przez **MCP** (FastMCP),  
-3) integruje się z **Claude Desktop** do wygodnego testowania i rozmowy z danymi.
+3) integruje się z **Claude Desktop** do wygodnego testowania i analizy danych.
 
 ## Funkcjonalności
 - **EDA (cocktails)** – szybkie statystyki i sanity-check danych.
@@ -30,8 +29,6 @@ Zbudować proste, lokalne urządzenie **RAG**, które:
   - `read_drinks()` – lista kolumn w CSV,
   - `get_column(column_name)` – zwrot wybranej kolumny,
   - `filter_drinks_by_ingredient(ingredient)` – filtrowanie rekordów po fragmencie tekstu,
-  - `rag_query(query, k=5)` – **retrieval** TF-IDF + cosine i zwrot kontekstu (top-K),
-  - `recommend_cocktails(ingredients=[], tastes=[], k=5)` – prosta rekomendacja po składnikach/profilach smakowych.
 - **Integracja z Claude Desktop (MCP)** – narzędzia dostępne w interfejsie czatu.
 
 ## Struktura repozytorium
@@ -112,18 +109,6 @@ Wpisuj w czacie z Claude (on wywoła narzędzia MCP):
 - **Znajdź po składniku:**
   > *“`filter_drinks_by_ingredient(\"tequila\")` i podaj pasujące drinki.”*
 
-- **RAG – kontekst do zapytania:**
-  > *“`rag_query(\"lekka cytrusowa propozycja do kolacji\", k=5)` i zsyntetyzuj odpowiedź.”*
-
-- **Rekomendacje:**
-  > *“`recommend_cocktails(ingredients=[\"rum\",\"mięta\"], tastes=[\"citrus\"], k=5)` i zaproponuj 2 najlepsze z krótkim uzasadnieniem.”*
-
-## Jak to działa (RAG)
-- **Retrieval:** dane z każdego wiersza CSV są łączone w jeden tekst i indeksowane przez **TF-IDF**; podobieństwo liczone **cosine similarity**.  
-- **Augmentation:** narzędzie `rag_query` zwraca **top-K** dopasowań (z `score`, `name`, `snippet` i `row`).  
-- **Generation:** Claude używa zwróconego kontekstu, by sformułować końcową odpowiedź.
-
-To podejście jest szybkie, działa **offline** i nie wymaga dodatkowych kluczy API.
 
 ## EDA – eksploracja danych
 - Notatnik: `eda/EDA_cocktails.ipynb`.  
