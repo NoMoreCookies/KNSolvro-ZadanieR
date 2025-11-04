@@ -48,23 +48,16 @@ Zbudować proste, lokalne urządzenie **RAG**, które:
 - System: Windows 11
 - **Claude Desktop** (do integracji MCP).
 
-## Instalacja
+## Instalacja (przez git bash)
 ```bash
 git clone <URL_DO_TEO_REPO>
 cd <NAZWA_REPO>
 python -m venv .venv
-
-.venv\Scripts\Activate.ps1
-
+source .venv/Scripts/activate
 pip install -r requirements.txt
-```
-tutaj dodam, że czasami na windowsie jest problem z odpaleniem venv, jeżeli owy wystąpi spróbuj zastosować komendę
 
-```bash
-Set-ExecutionPolicy Unrestricted -Scope Process
 ```
-
-Dla danej sesji terminala pozwala ona na odpalenie venv
+dla bezpieczeństwa warto jeszcze po tym wpisać pip install fastmcp
 
 ## EDA – eksploracja danych
 - Notatnik: `eda/EDA_cocktails.ipynb`.  
