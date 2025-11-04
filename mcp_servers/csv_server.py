@@ -16,7 +16,7 @@ mcp = FastMCP("drink_reader_server")
 @mcp.tool()
 def read_drinks() -> list:
     """Reads a CSV file and returns its contents as a dictionary."""
-    file_path_resolved = Path(__file__).parent / "cocktails.csv"
+    file_path_resolved = Path(__file__).parent.parent / "data" / "cocktails.csv"
     if not file_path_resolved.is_file():
         return {"error": f"File not found: {file_path_resolved} "}
     
@@ -26,7 +26,7 @@ def read_drinks() -> list:
 @mcp.tool()
 def get_column(column_name: str) -> list:
     """Returns the specified column from the CSV as a list."""
-    file_path_resolved = Path(__file__).parent / "cocktails.csv"
+    file_path_resolved = Path(__file__).parent.parent / "data" / "cocktails.csv"
     if not file_path_resolved.is_file():
        return {"error": f"File not found: {file_path_resolved} "}
     
@@ -39,7 +39,7 @@ def get_column(column_name: str) -> list:
 @mcp.tool()
 def filter_drinks_by_indgredient(ingredient: str) -> list:
     """Filters drinks by ingredient and returns matching rows."""
-    file_path_resolved = Path(__file__).parent / "cocktails.csv"
+    file_path_resolved = Path(__file__).parent.parent / "data" / "cocktails.csv"
     if not file_path_resolved.is_file():
         return {"error": f"Column '{column_name}' not found in CSV."}
     
